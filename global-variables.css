@@ -1,0 +1,31 @@
+html { 
+    scroll-behavior: smooth;  
+}
+
+:root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --transition-time: 0.3s;
+        }
+
+        /* 暗色主题变量 */
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: 
+                background-color var(--transition-time),
+                color var(--transition-time);
+        }
+
+        /* 自动适应系统主题设置 */
+        @media (prefers-color-scheme: dark) {
+            :root:not(.light-mode) {
+                --bg-color: #ffffff;
+                --text-color: #000000;
+            }
+        }
